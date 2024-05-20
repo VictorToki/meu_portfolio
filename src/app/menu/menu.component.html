@@ -1,0 +1,18 @@
+<div class="floating-menu" [class.active]="menuOpen">
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <div class="menu-icon">
+      
+    </div>
+  </div>
+  <div class="menu-options">
+    <ul>
+      <li (click)="scrollTo('hero')">Home</li>
+      <li (click)="scrollTo('my-profile')">Sobre</li>
+      <li (click)="scrollTo('experiences')">Experiências</li>
+      <li (click)="scrollTo('contact-me')">Contato</li>
+    </ul>
+    <div class="signature">
+      <app-geometric-signature></app-geometric-signature>
+    </div>
+  </div>
+</div>

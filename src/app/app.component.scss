@@ -1,0 +1,38 @@
+.main-page{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  .menu{
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+    z-index: 1;
+  }
+  
+  .main-text{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50vw;
+    background-color: var(--color-1);
+    padding: 2rem 3rem;
+  }
+  
+  .main-content{
+    height: 100%;
+    width: 50vw;
+    // background-color: var(--color-2);
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+}

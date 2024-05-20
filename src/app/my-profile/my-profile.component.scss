@@ -1,0 +1,51 @@
+#my-profile{
+  height: 100%;
+  max-width: 70%;
+  padding: 2rem 3rem;
+  position: sticky;
+  top: 0;
+}
+article{
+  margin-top: 2.5rem;
+  text-wrap: pretty;
+}
+p{
+  color: var(--gray-1);
+}
+
+.jp-txt{
+  position: relative;
+  margin-top: 1rem;
+  display: inline-block;
+  border-bottom: 1px dotted var(--gray-1);
+  color: var(--color-2);
+}
+.jp-txt .tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 240px;
+  background-color: var(--color-2);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 14px;
+  padding-top: 8px;
+  top: 50%;
+  transform: translateY(-55%);
+}
+.jp-txt .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent var(--color-2) transparent transparent;
+}
+.jp-txt:hover .tooltiptext {
+  visibility: visible;
+}
+

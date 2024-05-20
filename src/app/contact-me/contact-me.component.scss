@@ -1,0 +1,33 @@
+#contact-me{
+  background-color: #fff;
+  height: 100vh;
+  padding: 2rem 3rem;
+  isolation: isolate;
+}
+article{
+  margin-top: 2.5rem;
+  text-wrap: pretty;
+}
+p{
+  color: var(--gray-1);
+}
+.card-contato{
+  display: flex;
+  align-items: center;
+  margin: 1.4rem;
+  color: var(--gray-1);
+  text-decoration: none;
+
+  img{
+    width: 100%;
+  }
+
+  .box-img{
+    width: 64px;
+    height: 64px;
+    margin-right: 1rem;
+    border: 2px solid var(--color-3);
+    background-color: var(--color-3);
+    padding: .5rem;
+  }
+}

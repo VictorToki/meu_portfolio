@@ -1,0 +1,38 @@
+.wrap-signature{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  .square{
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-3);
+    margin-left: 8px;
+
+    &._k{
+      clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    }
+
+    &._i::before{
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      clip-path: polygon(50% 40%, 100% 0, 100% 100%, 50% 60%, 0 100%, 0 0);
+    }
+    
+    &._a{
+      clip-path: polygon(50% 0, 0 100%, 100% 100%);
+    }
+    &._m{
+      clip-path: polygon(50% 75%, 100% 0, 100% 100%, 0 100%, 0 0);
+
+    }
+
+  }
+}

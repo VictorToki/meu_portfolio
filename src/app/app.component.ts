@@ -19,7 +19,11 @@ import { MenuComponent } from "./menu/menu.component";
 export class AppComponent {
   title = 'my-portfolio';
   isHovered = false;
+  isMobile: boolean = false;
 
+  ngOnInit() {
+    this.checkWindowSize();
+  }
 
   onMouseEnter() {
     this.isHovered = true;
@@ -29,17 +33,28 @@ export class AppComponent {
     this.isHovered = false;
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkWindowSize();
+  }
+
+  checkWindowSize() {
+    this.isMobile = window.innerWidth <= 1200;
+  }
+
   @HostListener('window:wheel', ['$event'])
   onScroll(event: WheelEvent) {
-    const mainText:any = document.querySelector('.main-text');
-    const mainContent:any = document.querySelector('.main-content');
-
-    const newScrollPosition = mainContent.scrollTop + (event.deltaY * 3);
-    if (this.isHovered){
-      mainContent.scrollTo({
-        top: newScrollPosition,
-        behavior: 'smooth'
-      });
+    if (window.innerWidth > 1024) {
+      const mainText: any = document.querySelector('.main-text');
+      const mainContent: any = document.querySelector('.main-content');
+  
+      const newScrollPosition = mainContent.scrollTop + (event.deltaY * 3);
+      if (this.isHovered) {
+        mainContent.scrollTo({
+          top: newScrollPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   }
 }

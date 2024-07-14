@@ -7,11 +7,16 @@
   <div class="main-text" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <app-intro-message></app-intro-message>
   </div>
-  <div class="main-content">
+  <div class="main-content" *ngIf="!isMobile">
     <!-- <router-outlet></router-outlet> -->
     <app-hero-img></app-hero-img>
     <app-my-profile></app-my-profile>
     <app-experiences></app-experiences>
     <app-contact-me></app-contact-me>
   </div>
+
+  <app-hero-img *ngIf="isMobile"></app-hero-img>
+  <app-my-profile *ngIf="isMobile"></app-my-profile>
+  <app-experiences *ngIf="isMobile"></app-experiences>
+  <app-contact-me *ngIf="isMobile"></app-contact-me>
 </div>

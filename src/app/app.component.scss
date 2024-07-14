@@ -1,18 +1,36 @@
+@import '../breakpoint-var';
+@import '../mixins';
+
 .main-page{
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100svw;
+  height: 100svh;
   display: flex;
   flex-direction: row;
   justify-content: end;
   overflow-x: hidden;
   scroll-behavior: smooth;
 
+  @include respond-to(extra-large){
+    display: block;
+
+    > *{
+      position: sticky;
+      top: 0;
+    }
+  }
+
   .menu{
     position: fixed;
     top: 3rem;
     left: 3rem;
     z-index: 1;
+
+    @include respond-to(extra-large){
+      top: 1rem;
+      left: 1rem;
+      position: absolute
+    }
   }
   
   .main-text{
@@ -23,8 +41,15 @@
     left: 0;
     height: 100%;
     width: 50vw;
-    background-color: var(--color-1);
+    background-color: var(--color-4);
     padding: 2rem 3rem;
+
+    @include respond-to(extra-large){
+      display: flex;
+      position: relative;
+      width: 100%;
+      padding: 1rem;
+    }
   }
   
   .main-content{
@@ -34,5 +59,13 @@
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
+
+    @include respond-to(extra-large){
+      width: 100%;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+    }
   }
 }
+

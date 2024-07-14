@@ -1,5 +1,5 @@
 *{
-  color: #fff;
+  color: var(--color-3);
   line-height: 1.4;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .button{
-  color: #fff;
+  color: var(--color-3);
   background-color: var(--color-3);
   border: solid 2px var(--color-3);
   font-size: var(--font-size-body);
@@ -32,14 +32,25 @@
     color: var(--color-3);
     
     &:hover{
-      color: #fff;
-      box-shadow: inset 10rem 0 0 0 var(--color-2);
+      color: var(--color-3);
+      box-shadow: inset 10rem 0 0 0 var(--color-1);
+      color: var(--color-4);
+      border-color: var(--color-1);
     }
   }
 
   &:hover{
     cursor: pointer;
-    color: #fff;
+    color: var(--color-3);
     box-shadow: inset 10rem 0 0 0 var(--color-2);
+  }
+}
+
+.intro-footer{
+  position: absolute;
+  bottom: 24px;
+
+  .small-text{
+    font-size: calc(var(--font-size-body) - 2px);
   }
 }

@@ -73,7 +73,7 @@
     height: 30px;
     width: 42px;
     transition: 0.3s ease-in-out;
-    background-color: var(--color-3);
+    background-color: var(--color-1);
 
     &:hover{
       background-color: var(--color-2);
@@ -87,7 +87,7 @@
       top: 6px;
       left: 0;
       transition: 0.3s ease-in-out;
-      background-color: var(--color-1);
+      background-color: var(--color-4);
     }
     &::after{
       content: '';
@@ -97,7 +97,7 @@
       top: 18px;
       left: 0;
       transition: 0.3s ease-in-out;
-      background-color: var(--color-1);
+      background-color: var(--color-4);
     }
   }
 

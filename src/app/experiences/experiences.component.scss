@@ -1,9 +1,18 @@
+@import '../../breakpoint-var';
+@import '../../mixins';
+
 #experiences{
   background-color: var(--gray-3);
   isolation: isolate;
   position: sticky;
   top: -108px;
   padding-bottom: 5rem;
+
+  @include respond-to(extra-large) {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 .linha-inteira{
   padding: 2rem 3rem;
@@ -68,7 +77,7 @@
     }
   }
 
-  &:hover{
+  &:hover, &.show{
     &::after{
       background: var(--gray-3);
       opacity: .9;
@@ -90,6 +99,7 @@
       position: relative;
       margin: 0 1rem;
       padding-left: .5rem;
+      font-size: calc(var(--font-size-body) - .25rem);
 
       &::before{
         content: '';

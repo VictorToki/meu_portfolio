@@ -1,9 +1,17 @@
+@import '../../breakpoint-var';
+@import '../../mixins';
+
 #my-profile{
   height: 100%;
   max-width: 70%;
   padding: 2rem 3rem;
-  position: sticky;
-  top: 0;
+  
+  @include respond-to(extra-large) {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--color-3);
+  }
 }
 article{
   margin-top: 2.5rem;

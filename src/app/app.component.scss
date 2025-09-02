@@ -9,12 +9,14 @@
   flex-direction: row;
   justify-content: end;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 
   @include respond-to(extra-large){
     display: block;
 
-    > *{
+    > :nth-child(1),
+    > :nth-child(2),
+    > :nth-child(3),
+    > :nth-child(4) {
       position: sticky;
       top: 0;
     }
@@ -58,7 +60,6 @@
     // background-color: var(--color-2);
     overflow-x: hidden;
     overflow-y: auto;
-    scroll-behavior: smooth;
 
     @include respond-to(extra-large){
       width: 100%;

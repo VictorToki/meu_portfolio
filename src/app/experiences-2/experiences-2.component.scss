@@ -1,0 +1,270 @@
+@import '../../breakpoint-var';
+@import '../../mixins';
+
+#experiences-2 {
+  background-color: var(--gray-3);
+  padding: 2rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include respond-to(extra-large) {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .section-title {
+    margin-bottom: 4rem;
+    font-size: var(--font-size-1);
+    color: var(--color-4);
+    font-weight: 600;
+  }
+
+  .timeline {
+    position: relative;
+    
+    // Linha vertical principal da timeline
+    &::before {
+      content: '';
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(
+        to bottom,
+        var(--color-2) 0%,
+        var(--color-1) 50%,
+        var(--color-3) 100%
+      );
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-left: 5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-marker {
+        position: absolute;
+        left: 0.5rem;
+        top: 1rem;
+        z-index: 2;
+
+        .timeline-dot {
+          width: 2rem;
+          height: 2rem;
+          background: var(--color-2);
+          border: 4px solid white;
+          border-radius: 50%;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: scale(1.1);
+            background: var(--color-1);
+          }
+        }
+      }
+
+      .timeline-content {
+        .timeline-card {
+          background: white;
+          border-radius: 12px;
+          padding: 2rem;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          border: 1px solid var(--color-3);
+          transition: all 0.3s ease;
+          position: relative;
+
+          // Seta conectando o card à linha
+          &::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 2rem;
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-right: 8px solid white;
+          }
+
+          &:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border-color: var(--color-2);
+          }
+
+          .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            .company-name {
+              font-size: 1.5rem;
+              font-weight: 700;
+              color: var(--color-4);
+              margin: 0;
+            }
+
+            .period {
+              background: var(--color-1);
+              color: var(--color-4);
+              padding: 0.4rem 1rem;
+              border-radius: 20px;
+              font-size: 0.9rem;
+              font-weight: 600;
+              white-space: nowrap;
+            }
+          }
+
+          .job-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-2);
+            margin: 0 0 1rem 0;
+          }
+
+          .job-description {
+            color: var(--gray-1);
+            line-height: 1.6;
+            margin: 0 0 1.5rem 0;
+            font-size: var(--font-size-body);
+          }
+
+          .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            .tech-tag {
+              background: var(--color-3);
+              color: var(--color-4);
+              padding: 0.3rem 0.8rem;
+              border-radius: 15px;
+              font-size: 0.85rem;
+              font-weight: 500;
+              border: 1px solid var(--color-1);
+              transition: all 0.2s ease;
+
+              &:hover {
+                background: var(--color-1);
+                transform: translateY(-2px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  #experiences-2 {
+    padding: 2rem 1rem;
+
+    .timeline {
+      &::before {
+        left: 1rem;
+      }
+
+      .timeline-item {
+        padding-left: 3.5rem;
+
+        .timeline-marker {
+          left: 0.25rem;
+
+          .timeline-dot {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
+
+        .timeline-content {
+          .timeline-card {
+            padding: 1.5rem;
+
+            &::before {
+              left: -6px;
+              border-right-width: 6px;
+              border-top-width: 6px;
+              border-bottom-width: 6px;
+            }
+
+            .timeline-header {
+              flex-direction: column;
+              align-items: flex-start;
+
+              .company-name {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+              }
+
+              .period {
+                align-self: flex-start;
+              }
+            }
+
+            .job-title {
+              font-size: 1rem;
+            }
+
+            .job-description {
+              font-size: 0.95rem;
+            }
+
+            .technologies {
+              .tech-tag {
+                font-size: 0.8rem;
+                padding: 0.25rem 0.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  #experiences-2 {
+    padding: 1.5rem 0.75rem;
+
+    .section-title {
+      margin-bottom: 2.5rem;
+      font-size: 1.8rem;
+    }
+
+    .timeline {
+      .timeline-item {
+        margin-bottom: 2rem;
+
+        .timeline-content {
+          .timeline-card {
+            padding: 1.25rem;
+
+            .timeline-header {
+              .company-name {
+                font-size: 1.2rem;
+              }
+
+              .period {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

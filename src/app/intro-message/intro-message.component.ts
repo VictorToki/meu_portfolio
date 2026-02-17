@@ -17,7 +17,7 @@ export class IntroMessageComponent {
     element?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  download():void{
-    window.open('../../assets/files/resume.pdf', '_blank');
-  }
+  // download():void{
+  //   window.open('../../assets/files/resume.pdf', '_blank');
+  // }
 }

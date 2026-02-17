@@ -18,6 +18,6 @@ export class IntroMessageComponent {
   }
 
   download():void{
-    window.open('/assets/files/resume.pdf', '_blank');
+    window.open('../../assets/files/resume.pdf', '_blank');
   }
 }
